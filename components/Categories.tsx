@@ -23,7 +23,7 @@ function Categories() {
      <Container maxWidth="lg">
        <Grid container spacing={2}>
         {categories?.slice(0, 6)?.map((cat: any, index: number) => (
-          <Grid size={{xs: 6, sm: 4, md: 2}}> {cat.name}</Grid>
+          <Grid key={index} size={{xs: 6, sm: 4, md: 2}}> {cat.name}</Grid>
         ))}
       </Grid>
      </Container>

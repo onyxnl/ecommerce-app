@@ -1,6 +1,11 @@
 "use client";
 import React from "react";
 import { useProductsByCategory } from "../../hooks/useProductsByCategory";
+import { Button, Grid } from "@mui/material";
+import Container from "@mui/material/Container";
+import Image from 'next/image'
+import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
+
 
 function Products() {
   const { data: productsData, isLoading, isError } = useProductsByCategory();
@@ -11,19 +16,35 @@ function Products() {
   const green = "bg-[#456]";
   return (
     <>
-    
-      <h2 className="mt-17">Products</h2>
-      <div className="grid grid-cols-4 gap-2">
-        {products?.map((prod:any, index:number) => (
-          <div key={index}>
-            <div>
-              <img src={prod.thumbnail} className="w-full" />
-            </div>
-            <h5 className={`text-lg font-bold ${green} font-Open_Sans`}>{prod.title}</h5>
-            <div>{prod.price}</div>
-          </div>
-        ))}
-      </div>
+      <Container maxWidth="lg">
+        <h2 className="mt-17 mb-3">Products</h2>
+        <Grid container spacing={2}>
+          {products?.map((prod: any, index: number) => (
+            <Grid size={{xs:6, sm:4, md:3}} key={index} className="border border-gray-400 rounded-sm bg-blue-400 overflow-hidden shadow-lg shadow-gray-300">
+              <div className="bg-white">
+                <Image
+                  src={prod.thumbnail}
+                  className="w-full aspect-1 object-cover"
+                  width={500}
+                  height={500}
+                  alt="Picture"
+                />
+              </div>
+              <div className="p-3 d-flex">
+                <h5 className={`text-md font-bold font-Open_Sans min-h-12`}>
+                  {prod.title}
+                </h5>
+                <div>{prod.price}</div>
+                <Button variant="contained" endIcon={<ShoppingCartCheckoutIcon />}>
+                  Add to cart
+                </Button>
+
+              </div>
+              
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
     </>
   );
 }
