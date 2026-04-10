@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Providers from "@/components/Providers";
+import CustomAppbar from "@/components/CustomAppbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,11 +30,14 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body>
         <Providers>
-        {children}
+          <CustomAppbar />
+          <div className="mt-20">
+            {children}
+          </div>
         </Providers>
-        </body>
+      </body>
     </html>
   );
 }
