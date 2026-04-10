@@ -3,8 +3,8 @@ import React from "react";
 import { useProductsByCategory } from "../../hooks/useProductsByCategory";
 import { Button, Grid } from "@mui/material";
 import Container from "@mui/material/Container";
-import Image from 'next/image'
-import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
+import Image from 'next/image';
+import ShoppingCartTwoToneIcon from '@mui/icons-material/ShoppingCartTwoTone';
 
 
 function Products() {
@@ -20,7 +20,7 @@ function Products() {
         <h2 className="mt-17 mb-3">Products</h2>
         <Grid container spacing={2}>
           {products?.map((prod: any, index: number) => (
-            <Grid size={{xs:6, sm:4, md:3}} key={index} className="border border-gray-400 rounded-sm bg-blue-400 overflow-hidden shadow-lg shadow-gray-300">
+            <Grid size={{xs:6, sm:4, md:3}} key={index} className="border border-gray-400 rounded-sm bg-blue-400 overflow-hidden shadow-lg shadow-gray-300 text-center">
               <div className="bg-white">
                 <Image
                   src={prod.thumbnail}
@@ -34,8 +34,8 @@ function Products() {
                 <h5 className={`text-md font-bold font-Open_Sans min-h-12`}>
                   {prod.title}
                 </h5>
-                <div>{prod.price}</div>
-                <Button variant="contained" endIcon={<ShoppingCartCheckoutIcon />}>
+                <div className="pb-2">{prod.price}</div>
+                <Button variant="contained" endIcon={<ShoppingCartTwoToneIcon />}>
                   Add to cart
                 </Button>
 
