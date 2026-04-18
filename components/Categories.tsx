@@ -9,9 +9,6 @@ import Image from 'next/image';
 import { Tab, Tabs } from "@mui/material";
 import {useCategoryStore} from "@/store/useCategoryStore";
 
-// interface CategoryProps{
- 
-// }
 
 function Categories() {
   const { data: categories, isLoading, isError } = useCategories();
@@ -20,11 +17,12 @@ function Categories() {
 
   const {selectedCategory,setSelectedCategory} = useCategoryStore();
 
-  console.log(selectedCategory);
+  //console.log(selectedCategory);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
-    console.log(newValue);
+    setSelectedCategory(categories[newValue].slug);
+    console.log(categories[newValue].slug);
   };
   if (isLoading) return <p>Loading...</p>;
   if (isError) return <p>Error</p>;
@@ -74,6 +72,7 @@ function Categories() {
               label={cat.name} 
           />
         ))}
+
       </Tabs>
      </Container>
     </>
