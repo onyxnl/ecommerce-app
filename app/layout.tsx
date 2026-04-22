@@ -34,7 +34,8 @@ export default function RootLayout({
         <Providers>
           <CustomAppbar />
           <div className="mt-20">
-            {children}
+            <main>{children}</main>
+            
           </div>
         </Providers>
       </body>

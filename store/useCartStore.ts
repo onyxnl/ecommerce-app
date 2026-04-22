@@ -1,11 +1,24 @@
+import { CartItem, Product } from '@/types/general-types';
 import { create } from 'zustand'
+import {persist} from 'zustand/middleware';
 
-interface CartStore{
-  cart: string[] | null;
-  addtoCart: (products: string[] | null) => void;
+interface CartState{
+  cart: CartItem[];
+  addtoCart: (product: Product) => void;
 }
 
-export const useCartStore = create<CartStore>((set) => ({
-    cart: "beauty",
-    setCart: (products) => set({setCart:products}),
-}))
+export const useCartStore = create<CartState>() (
+  persist(
+    (set) => ({
+      cart :[],
+      addtoCart: (product) =>{
+        set((state) => {
+          const newCartItem = {...product};
+          console.log(state);
+          return { cart:[...state.cart,newCartItem]};
+        });
+      }
+    }),
+    {name:"cartitem"}
+  )
+)
