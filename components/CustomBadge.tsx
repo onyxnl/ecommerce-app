@@ -13,10 +13,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 //import Cartitems from './Cartitems';
 import Link from 'next/link';
-import { itemcount2 } from '@/libs/general';
 
-
-console.log(itemcount2);
 
 const CartBadge = styled(Badge)`
   & .${badgeClasses.badge} {

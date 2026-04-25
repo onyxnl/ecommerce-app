@@ -27,9 +27,16 @@ interface Props {
 }
 
 const drawerWidth = 240;
+
 const navItems = [
-  "Home", "About", "Contact"
+  { label: 'Home', link: '/' },
+  { label: 'About', link: '/about' },
+  { label: 'Contact', link: '/contact' }
 ];
+
+// const navItems = [
+//   "Home", "About", "Contact"
+// ];
 
 export default function CustomAppbar(props: Props) {
   const { window } = props;
@@ -47,10 +54,10 @@ export default function CustomAppbar(props: Props) {
         </Typography>
       <Divider />
         <List>
-          {navItems.map((item) => (
-            <ListItem key={item} disablePadding>
+          {navItems.map((item,index) => (
+            <ListItem key={index} disablePadding>
               <ListItemButton sx={{ textAlign: "center" }}>
-                <ListItemText primary={item} />
+                <Link href={item.link}><ListItemText primary={item.label} /></Link>
               </ListItemButton>
             </ListItem>
           ))}
@@ -86,9 +93,9 @@ export default function CustomAppbar(props: Props) {
               NL Store
             </Typography>
             <Box sx={{ display: { xs: "none", sm: "block" } }}>
-              {navItems.map((item) => (
-                <Button key={item} sx={{ color: "#fff" }}>
-                  <Link href="/">{item}</Link>
+              {navItems.map((item,index) => (
+                <Button key={index} sx={{ color: "#fff" }}>
+                  <Link href={item.link}>{item.label}</Link>
                 </Button>
               ))}
             </Box>
