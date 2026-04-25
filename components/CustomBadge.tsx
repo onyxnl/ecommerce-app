@@ -11,8 +11,12 @@ import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
-import Cartitems from './Cartitems';
+//import Cartitems from './Cartitems';
+import Link from 'next/link';
+import { itemcount2 } from '@/libs/general';
 
+
+console.log(itemcount2);
 
 const CartBadge = styled(Badge)`
   & .${badgeClasses.badge} {
@@ -39,31 +43,13 @@ export default function CustomBadge() {
         <CartBadge badgeContent={2} color="primary" overlap="circular" />
       </IconButton> */}
       <Box sx={{ flexGrow: 0 }}>
-      <Tooltip title="Open settings">
-        <IconButton onClick={handleOpenNavMenu}>
+      {/* <Tooltip title="Open settings"> */}
+        <Link href="/cart"> <IconButton onClick={handleOpenNavMenu}>
           <ShoppingCartIcon fontSize="small" />
-          <CartBadge badgeContent={2} color="primary" overlap="circular" />
-        </IconButton>
-      </Tooltip>
-      <Menu
-        sx={{ mt: '45px' }}
-        id="menu-appbar"
-        anchorOrigin={{
-          vertical: 'top',
-          horizontal: 'right',
-        }}
-        keepMounted
-        transformOrigin={{
-          vertical: 'top',
-          horizontal: 'right',
-        }}
-        open={Boolean(anchorUser)}
-        onClose={handleCloseUserMenu}
-      >
-        <MenuItem key="" onClick={handleCloseUserMenu}>
-            <Cartitems/>
-          </MenuItem>
-      </Menu>
+          <CartBadge badgeContent={1} color="primary" overlap="circular" />
+        </IconButton></Link>
+      {/* </Tooltip> */}
+      
     </Box>
     </React.Fragment>
   );

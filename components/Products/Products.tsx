@@ -41,7 +41,7 @@ function Products() {
                 </h5>
                 <div className="pb-2">{prod.price}</div>
                 <Button 
-                  onClick={() => addToCart(prod)}
+                  onClick={() => addToCart(prod,1)}
                   variant="contained" endIcon={<ShoppingCartTwoToneIcon />}>
                   Add to cart
                 </Button>

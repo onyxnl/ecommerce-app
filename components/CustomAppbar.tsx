@@ -15,6 +15,8 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import CustomBadge from "./CustomBadge";
+import Link from 'next/link'
+
 
 interface Props {
   /**
@@ -25,7 +27,9 @@ interface Props {
 }
 
 const drawerWidth = 240;
-const navItems = ["Home", "About", "Contact"];
+const navItems = [
+  "Home", "About", "Contact"
+];
 
 export default function CustomAppbar(props: Props) {
   const { window } = props;
@@ -39,7 +43,7 @@ export default function CustomAppbar(props: Props) {
     <>
       <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
         <Typography variant="h6" sx={{ my: 2 }}>
-          MUI
+          NL Store
         </Typography>
       <Divider />
         <List>
@@ -79,12 +83,12 @@ export default function CustomAppbar(props: Props) {
               component="div"
               sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
             >
-              MUI
+              NL Store
             </Typography>
             <Box sx={{ display: { xs: "none", sm: "block" } }}>
               {navItems.map((item) => (
                 <Button key={item} sx={{ color: "#fff" }}>
-                  {item}
+                  <Link href="/">{item}</Link>
                 </Button>
               ))}
             </Box>
