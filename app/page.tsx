@@ -1,13 +1,5 @@
-import Categories from "@/components/Categories";
-import Products from "@/components/Products/Products";
-import { Button } from "@mui/material";
-import Image from "next/image";
+import { redirect } from "next/navigation";
 
 export default function Home() {
-  return (
-    <>
-      <Categories />
-      <Products />
-    </>
-  );
+  redirect("/en");
 }

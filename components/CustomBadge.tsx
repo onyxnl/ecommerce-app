@@ -14,6 +14,7 @@ import Menu from '@mui/material/Menu';
 //import Cartitems from './Cartitems';
 import Link from 'next/link';
 import {useCartStore} from "@/store/useCartStore";
+import { useParams } from 'next/navigation';
 
 
 
@@ -26,6 +27,8 @@ const CartBadge = styled(Badge)`
 
 
 export default function CustomBadge() {
+  const params = useParams<{ lang?: string }>();
+  const lang = params?.lang === 'fr' ? 'fr' : 'en';
 
   const [anchorUser,setAnchorUser] = useState(false);
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
@@ -47,7 +50,7 @@ export default function CustomBadge() {
       </IconButton> */}
       <Box sx={{ flexGrow: 0 , marginRight:'2rem'}}>
       {/* <Tooltip title="Open settings"> */}
-        <Link href="/cart"> <IconButton onClick={handleOpenNavMenu}>
+        <Link href={`/${lang}/cart`}> <IconButton onClick={handleOpenNavMenu}>
           <ShoppingCartIcon fontSize="small" />
           <CartBadge badgeContent={totalCount} color="primary" overlap="circular" />
         </IconButton></Link>

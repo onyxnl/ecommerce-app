@@ -1,3 +1,64 @@
 {
-    "welcome": "Welcome"
+  "welcome": "Welcome",
+  "extensionsDashboard": {
+    "brand": "Extensions",
+    "listTitle": "Extensions List",
+    "filters": {
+      "All": "All",
+      "Active": "Active",
+      "Inactive": "Inactive"
+    },
+    "removeLabel": "Remove",
+    "settingsLabel": "Settings",
+    "extensions": {
+      "dev-lens": {
+        "name": "DevLens",
+        "description": "Quickly inspect page layouts and visualize element boundaries."
+      },
+      "stylespy": {
+        "name": "StyleSpy",
+        "description": "Instantly analyze and copy CSS from any webpage element."
+      },
+      "speed-boost": {
+        "name": "SpeedBoost",
+        "description": "Optimizes browser resource usage to accelerate page loading."
+      },
+      "json-wizard": {
+        "name": "JSONWizard",
+        "description": "Formats, validates, and prettifies JSON responses in-browser."
+      },
+      "tab-master-pro": {
+        "name": "TabMaster Pro",
+        "description": "Organizes browser tabs into groups and sessions."
+      },
+      "viewport-buddy": {
+        "name": "ViewportBuddy",
+        "description": "Simulates various screen resolutions directly within the browser."
+      },
+      "markup-notes": {
+        "name": "Markup Notes",
+        "description": "Enables annotation and notes directly onto webpages for debugging."
+      },
+      "grid-guides": {
+        "name": "GridGuides",
+        "description": "Overlay customizable grids and alignment guides on any webpage."
+      },
+      "palette-picker": {
+        "name": "Palette Picker",
+        "description": "Instantly extracts color palettes from any webpage."
+      },
+      "link-checker": {
+        "name": "LinkChecker",
+        "description": "Scans and highlights broken links on any page."
+      },
+      "dom-snapshot": {
+        "name": "DOM Snapshot",
+        "description": "Capture and export DOM structures quickly."
+      },
+      "console-plus": {
+        "name": "ConsolePlus",
+        "description": "Enhanced developer console with advanced filtering and logging."
+      }
+    }
   }
+}

@@ -1,0 +1,235 @@
+.wrapper {
+  --bg-1: #040b29;
+  --bg-2: #031344;
+  --panel: #1b2540;
+  --panel-border: #2f395a;
+  --text-main: #f2f4fb;
+  --text-muted: #9aa4c1;
+  --chip-bg: #2b3552;
+  --chip-active: #ff6259;
+  --card-radius: 14px;
+
+  min-height: 100vh;
+  padding: 32px;
+  background:
+    radial-gradient(circle at 10% 0%, #0b1d5a 0%, transparent 42%),
+    radial-gradient(circle at 100% 100%, #09103a 0%, transparent 34%),
+    linear-gradient(140deg, var(--bg-1), var(--bg-2));
+  color: var(--text-main);
+  font-family: "Lato", "Avenir Next", "Segoe UI", sans-serif;
+}
+
+.container {
+  max-width: 1220px;
+  margin: 0 auto;
+}
+
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(27, 37, 64, 0.75);
+  border: 1px solid var(--panel-border);
+  border-radius: 16px;
+  padding: 14px 18px;
+  backdrop-filter: blur(6px);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.logo {
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(150deg, #ff6259, #ff7f71);
+  box-shadow: 0 6px 18px rgba(255, 98, 89, 0.35);
+}
+
+.settingsBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  border: 1px solid var(--panel-border);
+  background: rgba(59, 70, 100, 0.68);
+  color: var(--text-main);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.headerRow {
+  margin-top: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(28px, 2.6vw, 38px);
+  font-weight: 700;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+}
+
+.filterBtn {
+  border: 1px solid var(--panel-border);
+  background: var(--chip-bg);
+  color: #dce2f4;
+  border-radius: 999px;
+  height: 38px;
+  padding: 0 16px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.filterBtnActive {
+  background: var(--chip-active);
+  border-color: transparent;
+  color: #fff;
+}
+
+.grid {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--card-radius);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  min-height: 188px;
+}
+
+.cardHead {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  color: #10193c;
+  font-size: 16px;
+}
+
+.cardTitle {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.cardDesc {
+  margin: 4px 0 0;
+  color: var(--text-muted);
+  font-size: 17px;
+  line-height: 1.4;
+}
+
+.cardActions {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding-top: 16px;
+}
+
+.removeBtn {
+  height: 35px;
+  padding: 0 15px;
+  border-radius: 999px;
+  border: 1px solid #3f4a70;
+  background: transparent;
+  color: #d6deef;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.toggle {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  border-radius: 999px;
+  border: 1px solid #4b5578;
+  background: #636d88;
+}
+
+.toggle::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 3px;
+  left: 4px;
+  border-radius: 999px;
+  background: #fff;
+  transition: transform 0.18s ease;
+}
+
+.toggleOn {
+  background: #ff6259;
+  border-color: transparent;
+}
+
+.toggleOn::after {
+  transform: translateX(20px);
+}
+
+@media (max-width: 1024px) {
+  .wrapper {
+    padding: 22px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .wrapper {
+    padding: 16px;
+  }
+
+  .headerRow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cardTitle {
+    font-size: 21px;
+  }
+
+  .cardDesc {
+    font-size: 16px;
+  }
+}

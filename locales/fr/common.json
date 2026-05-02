@@ -1,3 +1,64 @@
 {
-    "welcome": "asd"
+  "welcome": "Bienvenue",
+  "extensionsDashboard": {
+    "brand": "Extensions",
+    "listTitle": "Liste des extensions",
+    "filters": {
+      "All": "Toutes",
+      "Active": "Actives",
+      "Inactive": "Inactives"
+    },
+    "removeLabel": "Supprimer",
+    "settingsLabel": "Parametres",
+    "extensions": {
+      "dev-lens": {
+        "name": "DevLens",
+        "description": "Inspecte rapidement les mises en page et visualise les limites des elements."
+      },
+      "stylespy": {
+        "name": "StyleSpy",
+        "description": "Analyse et copie instantanement le CSS de n'importe quel element web."
+      },
+      "speed-boost": {
+        "name": "SpeedBoost",
+        "description": "Optimise l'utilisation des ressources du navigateur pour accelerer le chargement."
+      },
+      "json-wizard": {
+        "name": "JSONWizard",
+        "description": "Formate, valide et embellit les reponses JSON dans le navigateur."
+      },
+      "tab-master-pro": {
+        "name": "TabMaster Pro",
+        "description": "Organise les onglets en groupes et sessions."
+      },
+      "viewport-buddy": {
+        "name": "ViewportBuddy",
+        "description": "Simule plusieurs resolutions d'ecran directement dans le navigateur."
+      },
+      "markup-notes": {
+        "name": "Markup Notes",
+        "description": "Permet d'ajouter des annotations et des notes sur les pages pour le debogage."
+      },
+      "grid-guides": {
+        "name": "GridGuides",
+        "description": "Superpose des grilles et des guides d'alignement personnalisables sur toute page web."
+      },
+      "palette-picker": {
+        "name": "Palette Picker",
+        "description": "Extrait instantanement des palettes de couleurs depuis n'importe quelle page."
+      },
+      "link-checker": {
+        "name": "LinkChecker",
+        "description": "Analyse et signale les liens brises sur une page."
+      },
+      "dom-snapshot": {
+        "name": "DOM Snapshot",
+        "description": "Capture et exporte rapidement les structures DOM."
+      },
+      "console-plus": {
+        "name": "ConsolePlus",
+        "description": "Console developpeur amelioree avec filtrage et journalisation avances."
+      }
+    }
   }
+}

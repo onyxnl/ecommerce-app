@@ -17,6 +17,7 @@ import Button from "@mui/material/Button";
 import CustomBadge from "./CustomBadge";
 import LanguageSwitcher from "./LanguageSwitcher";
 import Link from 'next/link'
+import { useParams } from "next/navigation";
 
 
 interface Props {
@@ -29,19 +30,16 @@ interface Props {
 
 const drawerWidth = 240;
 
-const navItems = [
-  { label: 'Home', link: '/' },
-  { label: 'About', link: '/about' },
-  { label: 'Contact', link: '/contact' }
-];
-
-// const navItems = [
-//   "Home", "About", "Contact"
-// ];
-
 export default function CustomAppbar(props: Props) {
   const { window } = props;
+  const params = useParams<{ lang?: string }>();
+  const lang = params?.lang === "fr" ? "fr" : "en";
   const [mobileOpen, setMobileOpen] = React.useState(false);
+
+  const navItems = [
+    { label: lang === "fr" ? "Accueil" : "Home", link: `/${lang}` },
+    { label: lang === "fr" ? "A propos" : "About", link: `/${lang}/about` },
+  ];
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
