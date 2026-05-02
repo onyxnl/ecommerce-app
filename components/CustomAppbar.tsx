@@ -15,6 +15,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import CustomBadge from "./CustomBadge";
+import LanguageSwitcher from "./LanguageSwitcher";
 import Link from 'next/link'
 
 
@@ -92,6 +93,7 @@ export default function CustomAppbar(props: Props) {
             >
               NL Store
             </Typography>
+            
             <Box sx={{ display: { xs: "none", sm: "block" } }}>
               {navItems.map((item,index) => (
                 <Button key={index} sx={{ color: "#fff" }}>
@@ -100,9 +102,11 @@ export default function CustomAppbar(props: Props) {
               ))}
             </Box>
             <CustomBadge />
+            <LanguageSwitcher />
           </Toolbar>
         </AppBar>
         <nav>
+         
           <Drawer
             container={container}
             variant="temporary"

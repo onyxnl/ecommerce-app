@@ -13,6 +13,8 @@ import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 //import Cartitems from './Cartitems';
 import Link from 'next/link';
+import {useCartStore} from "@/store/useCartStore";
+
 
 
 const CartBadge = styled(Badge)`
@@ -33,17 +35,21 @@ export default function CustomBadge() {
   const handleCloseUserMenu =(event: React.MouseEvent<HTMLElement>) => {
     setAnchorUser(false);
   }
+  
+  const totalCount = useCartStore((state) => state.totalCount() );
+
+
   return (
     <React.Fragment>
       {/* <IconButton onClick={handleOpenNavMenu}>
         <ShoppingCartIcon fontSize="small" />
         <CartBadge badgeContent={2} color="primary" overlap="circular" />
       </IconButton> */}
-      <Box sx={{ flexGrow: 0 }}>
+      <Box sx={{ flexGrow: 0 , marginRight:'2rem'}}>
       {/* <Tooltip title="Open settings"> */}
         <Link href="/cart"> <IconButton onClick={handleOpenNavMenu}>
           <ShoppingCartIcon fontSize="small" />
-          <CartBadge badgeContent={1} color="primary" overlap="circular" />
+          <CartBadge badgeContent={totalCount} color="primary" overlap="circular" />
         </IconButton></Link>
       {/* </Tooltip> */}
       

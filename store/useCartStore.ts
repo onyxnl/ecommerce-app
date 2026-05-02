@@ -9,7 +9,7 @@ interface CartState {
   updateQuantity: (id: number, type: "inc" | "dec") => void;
   removeItem: (id: number) => void;
   clearAllItem: () => void;
-  totalCount: () => void;
+  totalCount: () => number;
   
 }
 
@@ -19,7 +19,7 @@ const getTotalCount = (cart:CartItem[]) => cart.reduce((sum:any, item:any) => {
 
 export const useCartStore = create<CartState>()(
   persist(
-    (set) => ({
+    (set,get) => ({
       cart: [],
       totalItem: 0,
       addtoCart: (product, quantity) => {
@@ -66,11 +66,9 @@ export const useCartStore = create<CartState>()(
         }));
       },
       totalCount: () => {
-        set((state) => ({
-          totalItem: state.cart.reduce((sum:any, item:any) => {
-            return sum + item.quantity
-          }, 0)
-        }))
+          return get().cart.reduce((sum:any, item:any) => 
+            sum + item.quantity
+          , 0)
        
       },
     }),
